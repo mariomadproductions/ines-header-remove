@@ -44,7 +44,7 @@ def process_file(file_path):
             mk_unheadered_copy(file_path, file_path_unh)
             print(f'{file_path}: created {file_path_unh}')
         except FileExistsError:
-            print(f'{file_path}: unheadered copy already exists at {file_path_unh}')
+            print(f'{file_path}: a file already exists at {file_path_unh}')
     else: 
         print(f'{file_path}: already unheadered')
 
