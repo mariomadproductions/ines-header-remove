@@ -30,9 +30,9 @@ def mk_unheadered_copy(file_path, file_path_unh):
 
 def process_dir(input_path, recursive):
     if recursive == True:
-        glob_str = '*.nes'
-    else:
         glob_str = '**/*.nes'
+    else:
+        glob_str = '*.nes'
 
     for file_path in input_path.glob(glob_str):
         process_file(file_path)
