@@ -7,7 +7,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='Create .unh equivalents of'\
                                      '.nes files. Processes files in directory '
                                      'if one is specified.')
-    parser.add_argument('--recursive', action='store_true')
+    parser.add_argument('-r', '--recursive', action='store_true')
     parser.add_argument('input_path')
     return parser.parse_args()
 
