@@ -24,7 +24,7 @@ def is_rom_headered(file_path):
 def mk_unheadered_copy(file_path, file_path_unh):
     with open(file_path, 'rb') as input_file,\
          open(file_path_unh, 'xb') as output_file:
-        input_file.seek(0x16)
+        input_file.seek(16)
         for chunk in iter(lambda: input_file.read(16384), b''):
             output_file.write(chunk)
 
