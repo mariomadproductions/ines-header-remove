@@ -14,7 +14,7 @@ def get_args():
 def is_rom_headered(file_path):
     file_len = file_path.stat().st_size
     with open(file_path, 'rb') as file:
-        first_4_bytes = file.read(0x4)
+        first_4_bytes = file.read(4)
 
     if first_4_bytes == b'NES\x1a':
         return True
