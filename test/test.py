@@ -54,7 +54,6 @@ def remove_output_file(output_file_path):
     output_file_path.unlink()
 
 def main():
-    
     error_raised = False
     input_file_path = Path('rom.nes')
     output_file_path = Path('rom.unh')
