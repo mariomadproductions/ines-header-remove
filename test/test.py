@@ -8,6 +8,11 @@ import sys
 
 logging.basicConfig(level=logging.INFO)
 
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('script_path')
+    return parser.parse_args()
+
 
 def get_sha256(file):
     calculated_sha256 = sha256()
@@ -52,10 +57,12 @@ def remove_output_file(output_file_path):
     output_file_path.unlink()
 
 def main():
+    args = get_args()
     error_raised = False
+
     input_file_path = Path('rom.nes')
     output_file_path = Path('rom.unh')
-    script_path = Path.cwd().parent.joinpath('ines_header_remove.py')
+    script_path = args.script_path
     expected_file_attributes = {
         'input_file': {'size': 32,
                        'sha256': '2ade7d35c7f4c23b5c687ab291da2af7'\
