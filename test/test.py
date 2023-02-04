@@ -8,8 +8,6 @@ import sys
 
 logging.basicConfig(level=logging.INFO)
 
-class MyException(Exception):
-    pass
 
 def get_sha256(file):
     calculated_sha256 = sha256()
